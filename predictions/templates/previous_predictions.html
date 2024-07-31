@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Previous Predictions{% endblock %}
+
+{% block content %}
+<h1>Previous Predictions</h1>
+<ul>
+    {% for prediction in predictions %}
+    <li>{{ prediction.stock_name }} - {{ prediction.predicted_price }} on {{ prediction.prediction_date }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

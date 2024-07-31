@@ -1,0 +1,16 @@
+[tool.black]
+line-length = 120
+target-version = ['py311']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs         # exclude compiled eggs
+  | \.git          # exclude git directory
+  | \.hg           # exclude mercurial directory
+  | \.mypy_cache   # exclude mypy cache
+  | \.tox          # exclude tox environments
+  | \.venv         # exclude virtual environments
+  | build          # exclude build directory
+  | dist           # exclude distribution directory
+)/
+'''

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Stock Predictor{% endblock %}</title>
+    <style>
+        /* Basic styles for the sidebar */
+        body {
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #000;
+        }
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Navigation</h2>
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'predict_stock' %}">Current Predictions</a>
+        <a href="{% url 'previous_predictions' %}">Previous Predictions</a>
+    </div>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
