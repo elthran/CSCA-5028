@@ -1,6 +1,5 @@
-# predictions/models.py
-
 from django.db import models
+
 
 class StockPrediction(models.Model):
     stock_name = models.CharField(max_length=50)
