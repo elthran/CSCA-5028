@@ -10,6 +10,8 @@ def index(request):
     latest_prediction = StockPrediction.objects.order_by("-prediction_datetime").first()
     time_since_last_prediction = None
     days = hours = minutes = 0
+    user_message = None
+
     if latest_prediction:
         time_since_last_prediction = timezone.now() - latest_prediction.prediction_datetime
         days = time_since_last_prediction.days
