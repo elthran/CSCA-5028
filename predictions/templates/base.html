@@ -1,3 +1,5 @@
+<!-- predictions/templates/predictions/base.html -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,8 +33,7 @@
     <div class="sidebar">
         <h2>Navigation</h2>
         <a href="{% url 'index' %}">Home</a>
-        <a href="{% url 'predict_stock' %}">Current Predictions</a>
-        <a href="{% url 'previous_predictions' %}">Previous Predictions</a>
+        <a href="{% url 'previous_predictions' %}">Historical Predictions</a>
     </div>
     <div class="content">
         {% block content %}{% endblock %}

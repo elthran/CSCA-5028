@@ -1,9 +1,11 @@
+<!-- predictions/templates/predictions/previous_predictions.html -->
+
 {% extends "base.html" %}
 
-{% block title %}Previous Predictions{% endblock %}
+{% block title %}Historical Predictions{% endblock %}
 
 {% block content %}
-<h1>Previous Predictions</h1>
+<h1>Historical Predictions</h1>
 <ul>
     {% for prediction in predictions %}
     <li>{{ prediction.stock_name }} - {{ prediction.predicted_price }} on {{ prediction.prediction_date }}</li>
