@@ -10,12 +10,13 @@
     <h2>Current Prediction</h2>
     <p>Stock: {{ latest_prediction.stock_name }}</p>
     <p>Predicted Price: {{ latest_prediction.predicted_price }}</p>
-    <p>Prediction Date: {{ latest_prediction.prediction_date }}</p>
+    <p>Prediction Date: {{ latest_prediction.prediction_datetime|date:"Y-m-d H:i:s" }}</p>
+    <p>Time Since Last Prediction: {{ days|default:0 }} days, {{ hours|default:0 }} hours, {{ minutes|default:0 }} minutes</p>
 {% else %}
     <p>No predictions available. Click "Refresh Prediction" to get the latest stock prediction.</p>
 {% endif %}
 <form action="{% url 'fetch_data' %}" method="post">
     {% csrf_token %}
-    <button type="submit" disabled/>Refresh Prediction</button>
+    <button type="submit">Refresh Prediction</button>
 </form>
 {% endblock %}

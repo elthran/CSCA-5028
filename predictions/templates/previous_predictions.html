@@ -8,7 +8,7 @@
 <h1>Historical Predictions</h1>
 <ul>
     {% for prediction in predictions %}
-    <li>{{ prediction.stock_name }} - {{ prediction.predicted_price }} on {{ prediction.prediction_date }}</li>
+    <li>{{ prediction.stock_name }} - {{ prediction.predicted_price }} on {{ prediction.prediction_datetime|date:"Y-m-d H:i:s" }}</li>
     {% endfor %}
 </ul>
 {% endblock %}
