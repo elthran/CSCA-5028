@@ -1,5 +1,6 @@
 ### Set Up
 
+This was all tested on both Python 3.10 and Python 3.11 (other versions may have issues)
 Everything should already be set up.
 The API calls are located at predictions/views.py
 Note, if my API key usage is exceeded for the day then it pulls from a static csv
