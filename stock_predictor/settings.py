@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-6@736qzter65_^r5k9z*452p#it0#2gc4^cma++k9j4vh6mtqq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["CSCA5028week2.pythonanywhere.com", "127.0.0.1"]  # TODO: Update this after creating my account
+ALLOWED_HOSTS = ["CSCA5028.pythonanywhere.com", "127.0.0.1"]  # TODO: Update this after creating my account
 
 # Application definition
 
