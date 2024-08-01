@@ -13,9 +13,7 @@ class StockPredictionModelTest(TestCase):
         predicted_price = 150.00
         prediction_datetime = timezone.now()
         prediction = StockPrediction.objects.create(
-            stock_name=stock_name,
-            predicted_price=predicted_price,
-            prediction_datetime=prediction_datetime
+            stock_name=stock_name, predicted_price=predicted_price, prediction_datetime=prediction_datetime
         )
 
         # Retrieve the prediction from the database
@@ -24,8 +22,9 @@ class StockPredictionModelTest(TestCase):
         # Check if the saved prediction matches the created one (up to the second)
         self.assertEqual(saved_prediction.stock_name, stock_name)
         self.assertEqual(saved_prediction.predicted_price, predicted_price)
-        self.assertEqual(saved_prediction.prediction_datetime.replace(microsecond=0),
-                         prediction_datetime.replace(microsecond=0))
+        self.assertEqual(
+            saved_prediction.prediction_datetime.replace(microsecond=0), prediction_datetime.replace(microsecond=0)
+        )
 
 
 class StockPredictionIntegrationTest(TestCase):
