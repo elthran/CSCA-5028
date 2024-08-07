@@ -8,7 +8,7 @@
     {% with probability=latest_prediction.probability_price_increases|floatformat:2 %}
     <h2>Current Prediction</h2>
     <p><strong>Stock:</strong> {{ latest_prediction.stock_name }}</p>
-    <p><strong>Closing Price:</strong> {{ latest_prediction.current_price }}</p>
+    <p><strong>Closing Price:</strong> ${{ latest_prediction.current_price }}</p>
     <p><strong>Probability Price Increases:</strong> {{ probability }}%</p>
     <p><strong>Prediction Datetime:</strong> {{ latest_prediction.prediction_datetime|date:"Y-m-d H:i:s" }}</p>
     <p><strong>Time Since Last Prediction:</strong> {{ days|default:0 }} days, {{ hours|default:0 }} hours, {{ minutes|default:0 }} minutes</p>
@@ -27,6 +27,7 @@
     <p>
         This Stock Prediction Web Application uses market data to predict the best stock to buy at this moment. <br>
         You can refresh the prediction to get the latest information, and check historical predictions to see past trends and decisions. <br>
+        If the API fails (limited use due to free service), then it will use last fetched data for prediction. <br>
     </p>
 </div>
 {% endblock %}

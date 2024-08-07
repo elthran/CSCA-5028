@@ -85,7 +85,9 @@ def predict_stock():
         weights, bias = models[stock_symbol]
         prob_increase = logistic_regression_predict_proba(latest_data_scaled, weights, bias)[0]
 
-        random_noise = np.random.normal(0, 0.01)
+        print(stock_symbol, prob_increase)
+
+        random_noise = np.random.normal(0, 0.05)
         prob_increase += random_noise
         prob_increase = np.clip(prob_increase, 0, 1)
 

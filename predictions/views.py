@@ -154,8 +154,6 @@ def fetch_data(request):
         )
         prediction.save()
 
-        print("My predicton:", prediction)
-
         context = {
             "stock_name": prediction.stock_name,
             "current_price": prediction.current_price,
